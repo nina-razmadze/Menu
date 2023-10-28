@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (showRecipesEvent)="onShowRecipes($event)" (showShoppingList)="onShowShoppingList($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
+            <app-recipes *ngIf="recivedRecipesShow"></app-recipes>
+            <app-shopping-list *ngIf="recivedShoppingListShow"></app-shopping-list>
         </div>
     </div>
 </div>

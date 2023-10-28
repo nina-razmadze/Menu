@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'nina';
+  recivedRecipesShow: boolean;
+  recivedShoppingListShow: boolean;
+
+  onShowRecipes(message: boolean) {
+    this.recivedRecipesShow = message;
+    this.recivedShoppingListShow = false;
+  }
+  onShowShoppingList(message: boolean) {
+    this.recivedShoppingListShow = message;
+    this.recivedRecipesShow = false;
+  }
 }
