@@ -7,9 +7,9 @@ import { Recipe } from '../../recipe.model';
 })
 export class RecipeItemComponent {
   @Input() recipe: Recipe;
-  @Output() recipeItem = new EventEmitter<boolean>(false);
+  @Output() recipeSelected = new EventEmitter<void>();
 
-  onRecipeClick(index: number) {
-    console.log(index + ' click');
+  onRecipeClick() {
+    this.recipeSelected.emit();
   }
 }
