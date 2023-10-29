@@ -21,9 +21,9 @@ export class RecipeListComponent {
       1
     ),
     new Recipe(
-      'A Test Recipe',
+      'Another Test Recipe',
       'This is Simply a Test',
-      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg',
+      'https://cdn.tasteatlas.com//images/toplistarticles/fc20fbcfe5cd4690ba0cb9614192303a.jpg?mw=1300',
       2
     ),
   ];
