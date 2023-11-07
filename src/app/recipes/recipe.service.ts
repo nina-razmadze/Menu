@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Injectable()
 export class RecipeService {
+  recipeSelected = new EventEmitter<Recipe>();
+  
   private recipes: Recipe[] = [
     new Recipe(
       'A Test Recipe',
@@ -22,9 +24,5 @@ export class RecipeService {
   getRecipes() {
     return this.recipes.slice();
   }
-  onRemoveRecipe(index: number) {
-    if (index >= 0 && index < this.recipes.length) {
-      this.recipes.splice(index, 1);
-    }
-  }
+ 
 }
