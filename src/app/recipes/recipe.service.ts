@@ -1,22 +1,25 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable()
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
-  
+
   private recipes: Recipe[] = [
     new Recipe(
-      'A Test Recipe',
-      'This is Simply a Test',
-      'https://upload.wikimedia.org/wikipedia/commons/3/39/Recipe.jpg',
-      1
+      'Big Fat Burger',
+      'What else you need say?',
+      'https://as2.ftcdn.net/v2/jpg/02/44/61/19/1000_F_244611927_yrh0ZIYwOGTDurVnCMAt7Cq8DR4sBkB0.jpg',
+
+      [new Ingredient('Meat', 1), new Ingredient('Big Fat Burger', 20)]
     ),
     new Recipe(
-      'Another Test Recipe',
-      'This is Simply a Test',
-      'https://cdn.tasteatlas.com//images/toplistarticles/fc20fbcfe5cd4690ba0cb9614192303a.jpg?mw=1300',
-      2
+      'Tasty Schnitzel',
+      'A super-tasty Schnitzel - just awesome!',
+      'https://img.freepik.com/free-photo/tender-juicy-veal-steak-medium-rare-with-french-fries_2829-19634.jpg?w=2000&t=st=1699384224~exp=1699384824~hmac=92343a7e88c20d2f5c41af0f82d9296c52492405af9704be4681bfa36829ccd5',
+
+      [new Ingredient('fries', 2), new Ingredient('meat', 20)]
     ),
   ];
   recipe: string = '';
@@ -24,5 +27,4 @@ export class RecipeService {
   getRecipes() {
     return this.recipes.slice();
   }
- 
 }
