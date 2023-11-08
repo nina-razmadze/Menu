@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   providers: [RecipeService],
 })
 export class RecipesComponent implements OnInit {
+  // recipe: { id: number; name: string; status: string };
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute,
@@ -23,7 +24,9 @@ export class RecipesComponent implements OnInit {
     });
   }
 
-  onDetails() {
-    this.router.navigate(['detail'], { relativeTo: this.route });
-  }
+  // onDetails() {
+  //   this.router.navigate(['/recipes', this.recipe.name, this.recipe.status], {
+  //     relativeTo: this.route,
+  //   });
+  // }
 }
