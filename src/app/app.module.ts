@@ -14,7 +14,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppinListService } from './shopping-list/shoppinlist.service';
 import { AppRoutingModule } from './app-routing.module';
-import { LendingPageComponent } from './lending-page/lending-page.component';
+import { LendingPageComponent } from './recipes/lending-page/lending-page.component';
 
 @NgModule({
   declarations: [
