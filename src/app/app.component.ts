@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   recivedRecipesShow: boolean;
   recivedShoppingListShow: boolean;
-  
+
   onShowRecipes(message: boolean) {
     this.recivedRecipesShow = message;
     this.recivedShoppingListShow = false;

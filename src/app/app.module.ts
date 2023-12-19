@@ -15,6 +15,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { ShoppinListService } from './shopping-list/shoppinlist.service';
 import { AppRoutingModule } from './app-routing.module';
 import { LendingPageComponent } from './recipes/lending-page/lending-page.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LendingPageComponent } from './recipes/lending-page/lending-page.compon
     RecipeItemComponent,
     RecipeListComponent,
     LendingPageComponent,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [RecipeService, ShoppinListService],
