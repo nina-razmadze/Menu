@@ -22,6 +22,9 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editMode = false;
   editedItemIndex: number;
   editedItem: Ingredient;
+  ingredients;
+  index: number;
+
   constructor(private shoppingListService: ShoppinListService) {}
 
   ngOnInit(): void {
@@ -51,5 +54,15 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.shoppingListService.addIngredient(newIngredient);
     }
+    this.editMode = false;
+    this.slForm.reset();
+  }
+  onClear() {
+    this.slForm.reset();
+    this.editMode = false;
+  }
+  onDeleteItem() {
+    this.onClear();
+    this.shoppingListService.deleteIngredient(this.editedItemIndex);
   }
 }

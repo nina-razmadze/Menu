@@ -16,7 +16,7 @@ import { ShoppinListService } from './shopping-list/shoppinlist.service';
 import { AppRoutingModule } from './app-routing.module';
 import { LendingPageComponent } from './recipes/lending-page/lending-page.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     LendingPageComponent,
     RecipeEditComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [RecipeService, ShoppinListService],
   bootstrap: [AppComponent],
 })
