@@ -8,12 +8,14 @@
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="amount">Amount</label>
-                    <input #amountInput type="number" name="amount" class="form-control" ngModel required="">
+                    <input #amountInput type="number" name="amount" class="form-control" ngModel required
+                        pattern="^[1-9]+[0-9]*$">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-success" style="margin-right: 5px;" type="submit">Add</button>
+                    <button [disabled]="!f.valid" class="btn btn-success" style="margin-right: 5px;"
+                        type="submit">{{editMode? 'Update':'Add'}}</button>
                     <button class="btn btn-danger" style="margin-right: 5px;" type="button">Delete</button>
                     <button class="btn btn-primary" type="button">Clear</button>
                 </div>
