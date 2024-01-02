@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { DataStorageSerice } from '../shared/data-storage.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  @Output() showRecipesEvent = new EventEmitter<boolean>(false);
-  @Output() showShoppingList = new EventEmitter<boolean>(false);
-
-  onShowRecipes() {
-    this.showRecipesEvent.emit(true);
+  constructor(private dataStorage: DataStorageSerice) {}
+  onSaveData() {
+    this.dataStorage.storeRecipes();
   }
-  onShowShoppinList() {
-    this.showShoppingList.emit(true);
+
+  fetchRecipes() {
+    this.dataStorage.getRecipes().subscribe();
   }
 }
