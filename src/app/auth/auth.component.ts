@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AuthComponent {
   isLogin = true;
+  @ViewChild('authForm') authForm;
 
   onSwitchMode() {
     this.isLogin = !this.isLogin;
+  }
+  onSubmit() {
+    console.log(this.authForm.value);
   }
 }
