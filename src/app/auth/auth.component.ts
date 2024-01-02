@@ -27,6 +27,9 @@ export class AuthComponent {
     const password = form.value.password;
 
     let authObs: Observable<AuthResponseData>;
+
+    this.isLoading = true;
+
     if (this.isLogin) {
       authObs = this.authService.login(email, password);
     } else {
@@ -34,15 +37,17 @@ export class AuthComponent {
     }
 
     authObs.subscribe(
-      (response) => {
+      (resData) => {
+        console.log(resData);
         this.isLoading = false;
-        console.log(response);
       },
-      (error) => {
+      (errorMessage) => {
+        console.log(errorMessage);
+        this.error = errorMessage;
         this.isLoading = false;
-        this.error = error.message;
       }
     );
+
     form.reset();
   }
 }
