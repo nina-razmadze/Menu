@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AuthComponent } from './auth/auth.component';
     LendingPageComponent,
     RecipeEditComponent,
     AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     HttpClientModule,
